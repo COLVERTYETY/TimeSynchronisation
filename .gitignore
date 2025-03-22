@@ -1,0 +1,42 @@
+# --- Build artifacts and configuration ------------------
+/build/
+/sdkconfig
+/sdkconfig.old
+/sdkconfig.ci
+
+# --- Compiled binaries and firmware ----------------------
+*.bin
+*.elf
+*.map
+~*.bin
+
+# --- Logs, dumps, and other output files ---------------
+*.log
+*_dump.txt
+dump.txt
+
+# Uncomment the following line if CSV data files are generated and you want to ignore them
+#*.csv
+
+# --- Heavy image files (graphs, screenshots, logs, etc.) -----
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.pdf
+*.txt
+*.csv
+
+# --- Python caches and virtual environments -------------
+/deactivate/
+/venv/
+/pyvenv.cfg
+*.pyc
+__pycache__/
+
+# --- OS generated files ---------------------------------
+.DS_Store
+Thumbs.db
+
+# --- Temporary files ------------------------------------
+*~
