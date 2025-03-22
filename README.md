@@ -9,6 +9,32 @@ Each node is made of a esp32s3 with a lora and uwb transceiver.
 
 UWB is used to establish the time synchronization, while lora is used to send the time synchronization data.
 
+## debug tools
+
+As part of thsi project I wrote a few debug tools to help with the evaluation of the time synchronization.
+This results in some intresting plots.
+
+---
+
+![debug](./media/call_graph.png)
+
+This is a graph of the back trace from the critical loop obtained via gdb.
+
+---
+
+![debug](./media/scenarios.png)
+
+This is a graph of one the different scenarios that can occur during the critical loop. This vue has more breadth than the previous one.
+
+---
+
+![sysgraph](./media/sysgraph.png)
+
+This is a part of a graph that shows how different tasks interact with each other.
+
+
+
+
 ## evaluation
 
 ![tof sync](./media/events_11.png)
