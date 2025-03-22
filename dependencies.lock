@@ -1,0 +1,17 @@
+dependencies:
+  RadioLib:
+    dependencies: []
+    source:
+      path: /home/nicolas/Documents/mit/FZ/idf/hello_world/components/RadioLib
+      type: local
+    version: 7.1.2
+  idf:
+    source:
+      type: idf
+    version: 5.4.0
+direct_dependencies:
+- RadioLib
+- idf
+manifest_hash: 7c1cd67d5de85feea74276e29aeb0f7f6ebd7a7b2fa1e7c0bbc8c9e78aa23828
+target: esp32s3
+version: 2.0.0

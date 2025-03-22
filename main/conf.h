@@ -1,0 +1,40 @@
+#ifndef CONF_H
+#define CONF_H
+#include "driver/spi_master.h"
+
+// universal spi handle
+extern spi_device_handle_t local_spi_handle;
+
+
+#define SYNC_GPIO GPIO_NUM_3
+
+// HSPI (SPI2) Pin Configuration
+#define HSPI_HOST SPI2_HOST
+#define HSPI_MOSI_GPIO GPIO_NUM_11
+#define HSPI_MISO_GPIO GPIO_NUM_13
+#define HSPI_SCLK_GPIO GPIO_NUM_12
+
+// UWB
+#define HSPI_CS_GPIO GPIO_NUM_10
+#define PIN_IRQ GPIO_NUM_9
+#define PIN_RST GPIO_NUM_8
+
+// LoRa
+#define LORA_RST_GPIO GPIO_NUM_2
+#define LORA_CS_GPIO GPIO_NUM_1
+#define LORA_GP1_GPIO GPIO_NUM_47
+#define LORA_IRQ_GPIO GPIO_NUM_48
+
+
+#define LR_BUFFER_SIZE 128
+#define REQUESTED_RANGING_AMOUNT 32
+
+#define RANGING_REQUEST_QUEUE_LENGTH 2
+#define RANGING_RESULT_QUEUE_LENGTH 64
+#define EMIT_LORA_QUEUE_LENGTH 100
+#define RECEIVE_LORA_QUEUE_LENGTH 100
+#define QUEUE_SET_LENGTH RECEIVE_LORA_QUEUE_LENGTH + RANGING_RESULT_QUEUE_LENGTH
+
+#define TS_RING_BUFFER_SIZE 64
+
+#endif  // CONF_H

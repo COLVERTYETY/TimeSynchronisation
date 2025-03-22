@@ -1,0 +1,1 @@
+idf.py build && idf.py flash -p /dev/ttyACM1 && idf.py flash -p /dev/ttyACM2 && openocd -f board/esp32s3-builtin.cfg

@@ -1,0 +1,2 @@
+# message_definitions.options
+BaseMessage.payload max_size:128

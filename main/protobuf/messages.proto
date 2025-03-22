@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+enum MessageType {
+    UNKNOWN = 0;
+    OTHER   = 1;
+    PING    = 2;
+    TWRTS   = 3;
+    REQUWB  = 4;
+}
+
+message BaseMessage {
+    MessageType type = 1; // Common field to identify the message type
+    bytes payload    = 2 ;    // Encoded payload for the actual message
+}
+
+message Ping {
+    uint32 counter = 1;
+}
+
+message Twrts {
+    uint64 uwb_poll_tx  = 1; // DW3000 TS
+    uint64 mcu_poll_tx  = 2; // MCU TS
+    uint64 uwb_resp_rx  = 3; // DW3000 TS
+    uint64 mcu_resp_rx  = 4; // MCU TS
+    uint64 uwb_resp_tx  = 5; // DW3000 TS
+    uint64 mcu_resp_tx  = 6; // MCU TS
+    uint64 uwb_poll_rx  = 7; // DW3000 TS
+    uint64 mcu_poll_rx  = 8; // MCU TS
+    uint64 uwb_final_tx = 9; // DW3000 TS
+    uint64 mcu_final_tx = 10; // MCU TS
+    uint64 uwb_final_rx = 11; // DW3000 TS
+    uint64 mcu_final_rx = 12; // MCU TS
+
+    uint32 SN           = 13; // sequence number
+    uint32 AN           = 14; // anchor number
+    double distance     = 15; // distance in meters
+    bool is_initiator   = 16; // true if this is a response to a TWR message
+    bool is_SS          = 17; // true if this is a response to a TWR message
+}
+
+message Requwb {
+    uint32 AN        = 1; // anchor number
+    uint32 SN        = 2; // sequence number
+    uint32 amount    = 3; // amount of messages to be sent
+    bool is_response = 4; // true if this is a response to a RequWB message
+    uint32 delay     = 5; // delay in microseconds
+}
